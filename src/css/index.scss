@@ -1,0 +1,254 @@
+:root {
+  --gopher-width: 360px;
+  --gopher-color: #69d7e2;
+  --gopher-skin: #d6b98d;
+  --ear-size: 75px;
+  --border-style: 3px solid black;
+}
+
+.gopher-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gopher-ears {
+  width: calc(var(--gopher-width) + 20px);
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(115px);
+
+  & .gopher-ear {
+    width: var(--ear-size);
+    height: var(--ear-size);
+    background: var(--gopher-color);
+    border-radius: 50%;
+    border: var(--border-style);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .inner-ear {
+      width: calc(var(--ear-size) * 0.5);
+      height: calc(var(--ear-size) * 0.5);
+      background: black;
+      border-radius: 50%;
+    }
+  }
+}
+
+.gopher-head {
+  width: var(--gopher-width);
+  height: 400px;
+  background: var(--gopher-color);
+  border-radius: 42% 42% 0 0;
+  border: var(--border-style);
+  border-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+}
+
+.gopher-eyes {
+  width: calc(var(--gopher-width) * 0.9);
+  display: flex;
+  justify-content: space-evenly;
+  transform: translateY(42px);
+
+  & .gopher-eye {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: white;
+    border: var(--border-style);
+    display: flex;
+    align-items: center;
+
+    & .gopher-pupil {
+      width: 42px;
+      height: 42px;
+      background: black;
+      border-radius: 50%;
+      transform: translateX(10px);
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      & .gopher-shine {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: white;
+        transform: translate(-8px, -8px);
+      }
+    }
+  }
+}
+
+.gopher-mouth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(30px);
+}
+
+.gopher-nose {
+  width: 55px;
+  height: 30px;
+  border-radius: 50%;
+  border: var(--border-style);
+  background: black;
+  transform: rotate(-2deg);
+  z-index: 5;
+}
+
+.gopher-lips {
+  display: flex;
+  align-items: center;
+
+  & .gopher-lip {
+    width: 50px;
+    height: 30px;
+    background: var(--gopher-skin);
+    border: var(--border-style);
+    transform: translateY(-10px);
+    z-index: 3;
+
+    &.left {
+      border-radius: 48% 0% 0% 48%;
+      border-right: 0;
+      transform:
+        translateY(-15px) 
+        rotate(-32deg);
+    }
+
+    &.right {
+      border-radius: 0% 48% 48% 0%;
+      border-left: 0;
+      transform:
+        translateX(2px)
+        translateY(-15px) 
+        rotate(25deg);
+    }
+  }
+}
+
+.gopher-teeth {
+  display: flex;
+  align-items: center;
+
+  & .gopher-tooth {
+    width: 30px;
+    height: 50px;
+    background: white;
+    border: var(--border-style);
+    border-radius: 0% 0% 60% 60%;
+    transform: translateY(-40px);
+  }
+}
+
+.gopher-bottom {
+  width: var(--gopher-width);
+  height: 300px;
+  background: var(--gopher-color);
+  border-radius: 0% 0% 42% 42%;
+  border: var(--border-style);
+  border-top: 0;
+  z-index: 5;
+}
+
+.gopher-paws {
+  width: calc(var(--gopher-width) + 50px);
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-350px);
+  
+  & .gopher-paw {
+    width: 35px;
+    height: var(--ear-size);
+    background: var(--gopher-skin);
+    border-radius: 80%;
+    border: var(--border-style);
+    
+    &.right {
+      transform:
+        rotate(calc(360deg - 65deg)) 
+        translateX(20px);
+    }
+    
+    &.left {
+      transform:
+        rotate(65deg) 
+        translateX(-20px);
+    }
+    
+    & .gopher-finger {
+      width: 15px;
+      height: 3px;
+      background: black;
+      
+      &.left {
+        transform:
+          rotate(-100deg)
+          translateX(-68px);
+      }
+      
+      &.right {
+        transform:
+          rotate(100deg)
+          translateX(65px)
+          translateY(-20px);
+      }
+    }
+  }
+}
+
+.gopher-feet {
+  width: calc(var(--gopher-width) + 20px);
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-160px);
+  
+  & .gopher-foot {
+    width: 35px;
+    height: var(--ear-size);
+    background: var(--gopher-skin);
+    border-radius: 80%;
+    border: var(--border-style);
+  
+    &.right {
+      transform:
+        rotate(calc(360deg - 95deg)) 
+        translateX(-5px) 
+        translateY(-10px);
+    }
+  
+    &.left {
+      transform:
+        rotate(calc(95deg)) 
+        translateX(-5px) 
+        translateY(-10px);
+    }
+
+    & .gopher-toe {
+      width: 15px;
+      height: 3px;
+      background: black;
+
+      &.left {
+        transform:
+          rotate(-100deg) 
+          translateX(-60px) 
+          translateY(10px);
+      }
+
+      &.right {
+        transform:
+          rotate(100deg) 
+          translateX(60px) 
+          translateY(-10px);
+      }
+    }
+  }
+}
